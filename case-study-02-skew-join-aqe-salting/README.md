@@ -99,6 +99,12 @@ The key finding is that AQE helps mitigate skew, but it may not fully solve extr
 
 In this case study, salting provided the best result by directly addressing the root cause: a small number of join keys containing most of the data.
 
+## Key Takeaway
+
+Adaptive Query Execution is a powerful optimization mechanism, but it is not always enough when the dataset contains extreme skew.
+
+When a few keys dominate the workload, manual techniques such as salting can significantly improve task distribution, reduce spill, and improve overall resource utilization.
+
 ## Notes
 
 This repository is intended as a hands-on Spark learning exercise.
@@ -107,8 +113,4 @@ Most of the technical explanations, execution plan analysis, Spark UI observatio
 
 The README provides a high-level overview of the experiment, while the notebook contains the complete implementation and detailed analysis.
 
-## Key Takeaway
 
-Adaptive Query Execution is a powerful optimization mechanism, but it is not always enough when the dataset contains extreme skew.
-
-When a few keys dominate the workload, manual techniques such as salting can significantly improve task distribution, reduce spill, and improve overall resource utilization.
