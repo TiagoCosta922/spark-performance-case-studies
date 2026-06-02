@@ -99,7 +99,13 @@ The key finding is that AQE helps mitigate skew, but it may not fully solve extr
 
 In this case study, salting provided the best result by directly addressing the root cause: a small number of join keys containing most of the data.
 
----
+## Notes
+
+This repository is intended as a hands-on Spark learning exercise.
+
+Most of the technical explanations, execution plan analysis, Spark UI observations, and performance discussions are documented directly inside the notebook alongside the code.
+
+The README provides a high-level overview of the experiment, while the notebook contains the complete implementation and detailed analysis.
 
 ## Key Takeaway
 
