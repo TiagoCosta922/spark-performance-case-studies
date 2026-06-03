@@ -17,7 +17,7 @@ Although the dimension table is relatively small, the join key distribution is n
 
 ### 1. Data Loading
 
-In the first section, both Delta tables (Fact and Dimension) are loaded into Spark.
+In the first section, both Delta tables (Fact and Dimension) are loaded.
 
 The schema, record counts, and basic dataset characteristics are reviewed before performing any transformations.
 
@@ -77,7 +77,9 @@ Key metrics analyzed include:
 * Data movement across executors
 * Resource utilization
 
-The goal is to understand when a Broadcast Join can provide significant advantages over a Sort Merge Join and how Spark's optimizer influences the execution plan.
+The goal is to understand when a Broadcast Join can provide significant advantages over a Sort Merge Join and how Spark's optimizer influences the execution plan,
+but we need to be aware that broadcast join is useful on small tables, you need to have enough memory in each executor, because the dataset will be broadcasted will be inside of each executor,
+When i enable the setting of broadcast join, I choose the default value of  10Mb for broadcast Join, each dataset with 10Mb or less will be broadcasted, you can choose a bigger value but you need to have in mind that you need to have enough memory on your executors.
 
 
 
